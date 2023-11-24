@@ -1,0 +1,92 @@
+@import "../util/var";
+@import "../util/mixins";
+
+.favorite {
+    margin-bottom: 10rem;
+    &-title {
+        margin-bottom: 4rem;
+        @include section-title($text-dark);
+        text-align: center;
+    }
+    &-active {
+        font-style: italic;
+        color: $text-accent;
+    }
+}
+.slider {
+    position: relative;
+    &-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    &-left,
+    &-right {
+        position: absolute;
+        top: 43%;
+        padding: 1.6rem 1.6rem 1.5rem;
+        border: .1rem solid $border-dark;
+        border-radius: 10rem;
+        text-align: center;
+        cursor: pointer;
+        transition: .5s ease;
+        &:hover {
+            background-color: $bg-container;
+            border-color: $bg-container;
+            transition: all .7s ease;
+        } 
+        &:hover .slider-arrow path {
+            stroke: $text-light;
+            transition: all .7s ease;
+        }
+    }
+    &-left {
+        left: .25%;
+    }
+    &-right {
+        right: .25%;
+    }
+    &-img {
+        margin-bottom: 2rem;
+    }
+    &-info {
+        max-width: 48rem;
+        text-align: center;
+    }
+    &-title {
+        margin-bottom: 1.6rem;
+        font-size: 2.4rem;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 125%;
+        color: $text-dark;    
+    }
+    &-text {
+        margin-bottom: 1.6rem;
+        @include text-subtitle;
+        color: $text-dark;
+    }
+    &-price {
+        margin-bottom: 4rem;
+        font-size: 2.4rem;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 125%;    
+    }
+    &-progress {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1.2rem;
+        &__line {
+            width: 4rem;
+            height: .4rem;
+            border-radius: 10rem;
+            background-color: $border-light;
+        }
+        &__line.active {
+            background-color: $border-dark;
+        }
+    }
+}

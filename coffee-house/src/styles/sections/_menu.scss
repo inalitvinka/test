@@ -1,0 +1,125 @@
+@import "../util/var";
+@import "../util/mixins";
+
+.menu {
+    margin-bottom: 10rem;
+    &-name,
+    &-tabs {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    &-title {
+        max-width: 80rem;
+        width: 100%;
+        margin-bottom: 4rem;   
+        @include section-title ($text-dark);
+        text-align: center;
+    }
+    &-active {
+        font-style: italic;
+        color: $text-accent;
+    }
+    &-tabs {
+        margin-bottom: 4rem;
+        gap: 1.6rem;
+    }
+    &-tab {
+        padding: .8rem 1.6rem .8rem .8rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: .8rem;
+        border: solid .1rem $border-light;
+        border-radius: 10rem;
+        transition: .7s ease;
+        cursor: pointer;
+        &:hover {
+            background-color: $bg-container;
+            transition: all .7s ease;
+        }
+        &:hover .menu-tab__icon {
+            background-color: $bg-body;
+        }
+        &:hover .menu-tab__name {
+            color: $text-light;
+            transition: all .7s ease;
+        }
+        &__icon {
+            padding: .5rem .7rem;
+            background-color: $border-light;
+            border: solid .1rem $border-light;
+            border-radius: 10rem;
+        }
+        &__ico {
+            width: 1.6rem;
+            height: 1.6rem;
+        }
+        &__name {
+            @include text-link;
+            text-transform: capitalize;
+        }
+        &__active {
+            background: $bg-container;
+            pointer-events: none; 
+        }
+        &__active .menu-tab__name {
+            color: $text-light;
+        }
+        &__active .menu-tab__icon {
+            background-color: $bg-body;
+        }
+    }
+}
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 4rem;
+    &-card {
+        max-width: 31rem;
+        height: 50.6rem;
+        border-radius: 4rem;
+        border: solid .1rem $border-light;
+        cursor: pointer;
+        &:hover .gallery-img {
+            transform: scale(1);
+            transition: transform .7s;
+        }
+    }
+    &-image {
+        width: 31rem;
+        height: 31rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        border-radius: 4rem;
+        cursor: pointer;
+        transition: .5s;
+    }
+    &-img {
+        width: 100%;
+        transform: scale(1.1);
+        transition: .5s ease;
+    }
+    &-info {
+        padding: 2rem;
+        max-width: 27rem;
+    }
+    &-title {
+        margin-bottom: 1.2rem;  
+    }
+    &-text {
+        width: 27rem;
+        height: 7.2rem;
+        margin-bottom: 1.2rem;
+        @include text-subtitle;
+        color: $text-dark;
+    }
+    &-title,
+    &-price {
+        @include text-card;
+        color: $text-dark;  
+    }
+}

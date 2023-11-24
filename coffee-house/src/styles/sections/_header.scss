@@ -1,0 +1,51 @@
+@import "../util/var";
+@import "../util/mixins";
+
+.header {
+    padding: 2rem 0;
+    &-menu {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &-coffee {
+        display: flex;
+        align-items: center;
+        gap: .8rem;
+        @include text-link;
+        // active for menu page
+        // border-bottom: solid .2rem $text-dark;
+        // padding-bottom: .2rem;
+    }
+    &-active {
+        padding-bottom: .2rem;
+        border-bottom: solid .2rem $text-dark;
+        pointer-events: none;
+    }
+}
+.nav {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 4rem;
+    &-link {
+        @include text-link;
+        position: relative;
+        &::after {
+            position: absolute;
+            content: '';
+            left: 50%;
+            bottom: -20%;
+            transform: translateX(-50%);
+            display: block;
+            width: 0;
+            height: .2rem;
+            background: $text-dark;
+            transition: .5s;
+        }
+        &:hover:after {
+            width: 100%;
+        }
+    }
+}

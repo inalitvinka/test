@@ -1,0 +1,54 @@
+@import "../util/var";
+@import "../util/mixins";
+
+.about {
+    margin-bottom: 10rem;
+    &-title {
+        margin-bottom: 4rem;
+        @include section-title($text-dark);
+    }
+    &-active {
+        font-style: italic;
+        color: $text-accent;
+    }
+    &-gallery {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 4rem;
+    }
+    &-box {
+        display: flex;
+        flex-direction: column;
+        gap: 4rem;
+    }
+    &-image {
+        max-width: 66rem;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        border-radius: 2rem;
+        cursor: pointer;
+    }
+    &-large {
+        max-height: 59rem;
+        height: 100%;
+    }
+    &-small {
+        max-height: 43rem;
+        height: 100%;
+    }
+    &-img {
+        transform: scale(1.1);
+        transition: .5s ease;
+        &:hover {
+            transform: scale(1);
+            transition: transform .7s;
+        }
+    }
+    // наклон строки transform: skewX(-30deg);
+
+}

@@ -1,0 +1,56 @@
+@import "../util/var";
+@import "../util/mixins";
+
+.hero {
+    padding: 10rem;
+    margin-bottom: 10rem;
+    background-image: url('../assets/images/img-hero.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 4rem;
+    &-title,
+    &-text {
+        max-width: 53rem;
+        width: 100%;
+        margin-bottom: 4rem;
+    }
+    &-title {
+        @include text-title;
+    }
+    &-active {
+        font-style: italic;
+        color: $text-accent;
+    }
+    &-text {
+        @include text-subtitle;
+    }
+    &-btntitle  {
+        transform: translate(1.1rem);
+        transition: transform .5s;
+    }
+    &-svg {
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity .5s, visibility 0s linear .5s;
+    }
+    &-btn {
+        max-width: 20rem;
+        width: 100%;
+        padding: 2rem 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @include text-link; 
+        @include button-style;
+        &:hover .hero-svg {
+            opacity: 1;
+            visibility: visible;
+            transition-delay: 0s;
+        }  
+        &:hover .hero-btntitle {
+            transform: translate(-.8rem);
+            transition: transform .7s;
+        }  
+    }
+}
