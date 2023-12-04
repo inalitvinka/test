@@ -33,6 +33,8 @@
     }
     &-buttons {
         display: flex;
+        flex-wrap: wrap;
+        align-items: center;
         gap: 2rem;
     }
     &-btn {
@@ -43,21 +45,26 @@
         border: solid .1rem $border-dark;
         border-radius: 10rem;
         transition: .7s ease;
-        cursor: pointer;
-        &:hover {
-            background-color: $bg-container;
-            transition: all 1s ease;
-        }
-        &:hover svg.app-icon path {
-            fill: $text-light;
-            transition: all .7s ease;
-        } 
-        &:hover .app-intro,
-        &:hover .app-name {
-            color: $text-light;
-            transition: all .7s ease;
-        } 
+        // cursor: pointer;
+        // &:hover {
+        //     background-color: $bg-container;
+        //     transition: all 1s ease;
+        // }
+        // &:hover svg.app-icon path {
+        //     fill: $text-light;
+        //     transition: all .7s ease;
+        // } 
+        // &:hover .app-intro,
+        // &:hover .app-name {
+        //     color: $text-light;
+        //     transition: all .7s ease;
+        // } 
     }
+    &-icon path,
+    &-intro,
+    &-name {
+        transition: .7s ease;
+    } 
     &-icon {
         width: 3.6rem;
         margin-right: .8rem;
@@ -74,4 +81,51 @@
     &-name {
         @include text-link; 
     } 
+}
+@media (hover: hover) and (pointer: fine) {
+    .app-btn:hover {
+        background-color: $bg-container;
+        transition: all 1s ease;
+        cursor: pointer;
+    }
+    .app-btn:hover svg.app-icon path {
+        fill: $text-light;
+        transition: all .7s ease;
+    } 
+    .app-btn:hover .app-intro,
+    .app-btn:hover .app-name {
+        color: $text-light;
+        transition: all .7s ease;
+        cursor: pointer;
+    } 
+}
+//ADAPTIVE 
+@media screen and (max-width: 1400px) {
+    .app {
+        &-info {
+            max-width: 100%;
+        }
+    }
+}
+@media screen and (max-width: 1090px) {
+    .app {
+        &-info {
+            max-width: 85%;
+        }
+    }
+}
+@media screen and (max-width: 768.9px) {
+    .app {
+        &-info {
+            max-width: 68.8rem;
+        }
+    }
+}
+@media screen and (max-width: 500px) {
+    .app {
+        gap: 4rem;
+        &-title {
+            font-size: 3.2rem;
+        }
+    }
 }
