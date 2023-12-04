@@ -36,6 +36,7 @@ a {
 a:hover,
 a:visited {
     text-decoration: none;
+    cursor: default;
 }
 
 ul li {
@@ -69,5 +70,25 @@ body {
     padding-right: 2rem;
     padding-left: 2rem;
 }
+// ADAPTIVE
+@media screen and (max-width: 768.9px) {
+    .container {
+        padding-right: 4rem;
+        padding-left: 4rem;
+    }
+}
+@media screen and (max-width: 715px) {
+    .container {
+        padding-right: 1.6rem;
+        padding-left: 1.6rem;
+    }
+}
+@media screen and (max-width: 500px) {
+    .container {
+        padding-right: 1.6rem;
+        padding-left: 1.6rem;
+    }
+}
+
 
 
