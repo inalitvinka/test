@@ -74,9 +74,9 @@
                 background: $text-light;
                 transition: .5s;
             }
-            &:hover:after {
-                width: 100%;
-            }    
+            // &:hover:after {
+            //     width: 100%;
+            // }    
         }
         &__link,
         &__item {
@@ -103,6 +103,9 @@
     .footer-nav__link:hover {
         cursor: pointer;
     }
+    .footer-nav__link:hover:after {
+        width: 100%;
+    } 
     // li.footer-nav__item {
     //     cursor: default;
     // }
