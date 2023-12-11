@@ -3,81 +3,75 @@ section.container
         .menu-name
             h1.menu-title Behind each of our cups hides an <span class="menu-active">amazing surprise</span>
         .menu-tabs
-            .menu-tab.menu-tab__coffee.menu-tab__active
-                .menu-tab__icon 
-                    img.menu-tab__ico(src=require("../assets/images/svg/coffee.svg"), alt="coffee")
-                p.menu-tab__name coffee
-            .menu-tab.menu-tab__tea
-                .menu-tab__icon 
-                    img.menu-tab__ico(src=require("../assets/images/svg/tea.svg"), alt="tea")
-                p.menu-tab__name tea
-            .menu-tab.menu-tab__dessert
-                .menu-tab__icon 
-                    img.menu-tab__ico(src=require("../assets/images/svg/dessert.svg"), alt="dessert")
-                p.menu-tab__name dessert
+            .menu-tab.menu-tab__coffee.menu-tab__active(data-tab='coffee')
+                .menu-tab__icon(data-tab='coffee') 
+                    img.menu-tab__ico(src=require("../assets/images/svg/coffee.svg"), alt="coffee" data-tab='coffee')
+                p.menu-tab__name(data-tab='coffee') coffee
+            .menu-tab.menu-tab__tea(data-tab='tea')
+                .menu-tab__icon(data-tab='tea') 
+                    img.menu-tab__ico(src=require("../assets/images/svg/tea.svg"), alt="tea" data-tab='tea')
+                p.menu-tab__name(data-tab='tea') tea
+            .menu-tab.menu-tab__dessert(data-tab='dessert') 
+                .menu-tab__icon(data-tab='dessert')
+                    img.menu-tab__ico(src=require("../assets/images/svg/dessert.svg"), alt="dessert" data-tab='dessert')
+                p.menu-tab__name(data-tab='dessert')  dessert
         .gallery
-            .gallery-cards
-                .gallery-card
-                    .gallery-image 
-                        img.gallery-img(src=require("../assets/images/coffee/coffee-1.jpg"), alt="coffee")
-                    .gallery-info
-                        h4.gallery-title Irish coffee
-                        p.gallery-text Fragrant black coffee with Jameson Irish whiskey and whipped milk
-                        p.gallery-price $7.00
-                .gallery-card
-                    .gallery-image 
-                        img.gallery-img(src=require("../assets/images/coffee/coffee-2.jpg"), alt="coffee")
-                    .gallery-info
-                        h4.gallery-title Kahlua coffee
-                        p.gallery-text Classic coffee with milk and Kahlua liqueur under a cap of frothed milk
-                        p.gallery-price $7.00
-                .gallery-card
-                    .gallery-image 
-                        img.gallery-img(src=require("../assets/images/coffee/coffee-3.jpg"), alt="coffee")
-                    .gallery-info
-                        h4.gallery-title Honey raf
-                        p.gallery-text Espresso with frothed milk, cream and aromatic honey
-                        p.gallery-price $5.50
-                .gallery-card
-                    .gallery-image 
-                        img.gallery-img(src=require("../assets/images/coffee/coffee-4.jpg"), alt="coffee")
-                    .gallery-info
-                        h4.gallery-title Ice cappuccino
-                        p.gallery-text Cappuccino with soft thick foam in summer version with ice
-                        p.gallery-price $5.00
-                .gallery-card
-                    .gallery-image 
-                        img.gallery-img(src=require("../assets/images/coffee/coffee-5.jpg"), alt="coffee")
-                    .gallery-info
-                        h4.gallery-title Espresso
-                        p.gallery-text Classic black coffee
-                        p.gallery-price $4.50
-                .gallery-card
-                    .gallery-image 
-                        img.gallery-img(src=require("../assets/images/coffee/coffee-6.jpg"), alt="coffee")
-                    .gallery-info
-                        h4.gallery-title Latte
-                        p.gallery-text Espresso coffee with the addition of steamed milk and dense milk foam
-                        p.gallery-price $5.50
-                .gallery-card
-                    .gallery-image 
-                        img.gallery-img(src=require("../assets/images/coffee/coffee-7.jpg"), alt="coffee")
-                    .gallery-info
-                        h4.gallery-title Latte macchiato
-                        p.gallery-text Espresso with frothed milk and chocolate
-                        p.gallery-price $5.50
-                .gallery-card
-                    .gallery-image 
-                        img.gallery-img(src=require("../assets/images/coffee/coffee-8.jpg"), alt="coffee")
-                    .gallery-info
-                        h4.gallery-title Coffee with cognac
-                        p.gallery-text Fragrant black coffee with cognac and whipped cream
-                        p.gallery-price $6.50
-            .gallery-loader 
+            .gallery-cards#menu
+            .gallery-loader#refresh 
                 <svg class="gallery-ico" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M21.8883 13.5C21.1645 18.3113 17.013 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C16.1006 2 19.6248 4.46819 21.1679 8" stroke="#403F3D" stroke-linecap="round" stroke-linejoin="round"/>
                     <path d="M17 8H21.4C21.7314 8 22 7.73137 22 7.4V3" stroke="#403F3D" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
+
+
+
+//- .modal.open 
+//-     .modal-overlay 
+//-         .modal-window 
+//-             .modal-content 
+//-                 .modal-image 
+//-                     img.modal-img(src=require("../assets/images/coffee/coffee-1.jpg"), alt="coffee-card")
+//-                 .modal-description
+//-                     .modal-name 
+//-                         h4.modal-title Irish coffee
+//-                         p.modal-text Fragrant black coffee with Jameson Irish whiskey and whipped milk
+//-                     .modal-order
+//-                         p.modal-order__name Size
+//-                         .modal-tabs
+//-                             .modal-tab.modal-tab__active
+//-                                 p.modal-icon S
+//-                                 p.modal-size 200 ml
+//-                             .modal-tab 
+//-                                 p.modal-icon M
+//-                                 p.modal-size 300 ml
+//-                             .modal-tab 
+//-                                 p.modal-icon L
+//-                                 p.modal-size 400 ml
+//-                     .modal-order
+//-                         p.modal-order__additives Additives
+//-                         .modal-tabs
+//-                             .modal-tab 
+//-                                 p.modal-icon 1
+//-                                 p.modal-size Sugar
+//-                             .modal-tab 
+//-                                 p.modal-icon 2
+//-                                 p.modal-size Cinnamon
+//-                             .modal-tab 
+//-                                 p.modal-icon 3
+//-                                 p.modal-size Syrup
+//-                     .modal-total 
+//-                         p.modal-price Total:
+//-                         p.modal-price $7.00
+//-                     .modal-info 
+//-                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none"><g clip-path="url(#clip0_268_12877)">
+//-                             <path d="M8 7.66663V11" stroke="#403F3D" stroke-linecap="round" stroke-linejoin="round"/>
+//-                             <path d="M8 5.00667L8.00667 4.99926" stroke="#403F3D" stroke-linecap="round" stroke-linejoin="round"/>
+//-                             <path d="M7.99967 14.6667C11.6816 14.6667 14.6663 11.6819 14.6663 8.00004C14.6663 4.31814 11.6816 1.33337 7.99967 1.33337C4.31778 1.33337 1.33301 4.31814 1.33301 8.00004C1.33301 11.6819 4.31778 14.6667 7.99967 14.6667Z" stroke="#403F3D" stroke-linecap="round" stroke-linejoin="round"/></g><defs><clipPath id="clip0_268_12877"><rect width="16" height="16" fill="white"/></clipPath></defs>
+//-                         </svg>
+//-                         p The cost is not final. Download our mobile app to see the final price and place your order. Earn loyalty points and enjoy your favorite coffee with up to 20% discount.
+//-                     .modal-button 
+//-                         p.modal-btn Close
+        
 
                 
                 

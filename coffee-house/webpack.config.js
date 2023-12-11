@@ -70,6 +70,13 @@ module.exports = {
               filename: 'fonts/[name][ext]'
             }
           },
+          { 
+            test: /\.mp4$/i, 
+            type: "asset/resource" ,
+            generator: {
+              filename: 'video/[name][ext]'
+            }
+          },
           {
             test: /\.(jpe?g|png|webp|gif|svg)$/i,
             use: [

@@ -42,3 +42,20 @@
     font-weight: 600;
     line-height: 125%;    
 }
+@mixin text-intro {
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 140%;
+    color: $text-dark;
+}
+@mixin menu-tab {
+    padding: .8rem 1.6rem .8rem .8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .8rem;
+    border: solid .1rem $border-light;
+    border-radius: 10rem;
+    transition: .7s ease;
+}

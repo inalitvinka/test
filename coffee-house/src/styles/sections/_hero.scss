@@ -2,17 +2,48 @@
 @import "../util/mixins";
 
 .hero {
-    padding: 10rem;
+    // padding: 10rem;
     margin-bottom: 10rem;
-    background-image: url('../assets/images/img-hero.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+    // background-image: url('../assets/images/img-hero.jpg');
+    // background-repeat: no-repeat;
+    // background-size: cover;
+    // background-position: center;
     border-radius: 4rem;
-    &-title,
-    &-text {
+    position: relative;
+    height: 64.4rem;
+    &-video {
+        position: relative;
+        max-width: 136rem;
+        height: 64.4rem;
+        border-radius: 4rem;
+        overflow: hidden;
+        // text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;    
+    }
+    &-screen {
+        position: absolute;
+        top: 0;
+        left: 0;
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+        border-radius: 4rem;
+        // object-fit: fill;
+    }
+    &-info {
+        // padding: 10rem;
+        position: absolute;
+        top: 10rem;
+        left: 10rem;
         max-width: 53rem;
         width: 100%;
+    }
+    &-title,
+    &-text {
+        // max-width: 53rem;
+        // width: 100%;
         margin-bottom: 4rem;
     }
     &-title {
@@ -72,7 +103,11 @@
 //ADAPTIVE 
 @media screen and (max-width: 768.9px) {
     .hero {
-        padding: 10rem 6rem;
+        &-info {
+            top: 10rem;
+            left: 6rem;
+            margin-right: 1rem;   
+        }
         &-btntitle {
             transform: translate(-.6rem);
         }  
@@ -83,12 +118,45 @@
         }  
     }
 }
+@media screen and (max-width: 650px) {
+    .hero {
+        &-info {
+            top: 5.8rem;
+            left: 1.6rem;    
+        }
+    }
+}
+@media screen and (max-width: 579px) {
+
+}
 @media screen and (max-width: 500px) {
     .hero {
-        padding: 5.8rem 1.6rem;
+        height: 552px;
+        // padding: 5.8rem 1.6rem;
+        &-video {
+            max-height: 552px;
+        }
+        &-info {
+            top: 5.8rem;
+            left: 1.6rem;
+            margin-right: 5rem;  
+        }
         &-title {
             font-size: 4.2rem;
             line-height: 115%;
+        }
+    }
+}
+@media screen and (max-width: 380px) {
+    .hero {
+        height: 552px;
+        // padding: 5.8rem 1.6rem;
+        &-video {
+            max-height: 552px;
+        }
+        &-info {
+            max-width: 31.6rem;
+            width: 100%;  
         }
     }
 }
